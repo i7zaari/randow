@@ -49,7 +49,7 @@ set_a_random_wallpaper () {
     fi
 }
 
-run_the_randow_script_when_moving_the_pointer_into_a_corner_of_the_screen () {
+run_the_randow_script_when_moving_the_cursor_into_a_corner_of_the_screen () {
     gsettings set org.pantheon.desktop.gala.behavior hotcorner-custom-command "hotcorner-topleft:$RANDOW;;hotcorner-topright:$RANDOW;;hotcorner-bottomleft:$RANDOW;;hotcorner-bottomright:$RANDOW;;"
     echo -e "${BLUE}Available options:${RESET}"
     echo "  1) Top left corner"
@@ -67,19 +67,19 @@ run_the_randow_script_when_moving_the_pointer_into_a_corner_of_the_screen () {
         case $CORNER in
             1)
                 gsettings set org.pantheon.desktop.gala.behavior hotcorner-topleft "custom-command"
-                echo "You can change the desktop wallpaper randomly by moving the pointer into the top left corner"
+                echo "You can change the desktop wallpaper randomly by moving the cursor into the top left corner"
                 ;;
             2)
                 gsettings set org.pantheon.desktop.gala.behavior hotcorner-topright "custom-command"
-                echo "You can change the desktop wallpaper randomly by moving the pointer into the top right corner"
+                echo "You can change the desktop wallpaper randomly by moving the cursor into the top right corner"
                 ;;
             3)
                 gsettings set org.pantheon.desktop.gala.behavior hotcorner-bottomleft "custom-command"
-                echo "You can change the desktop wallpaper randomly by moving the pointer into the bottom left corner"
+                echo "You can change the desktop wallpaper randomly by moving the cursor into the bottom left corner"
                 ;;
             4)
                 gsettings set org.pantheon.desktop.gala.behavior hotcorner-bottomright "custom-command"
-                echo "You can change the desktop wallpaper randomly by moving the pointer into the bottom right corner"
+                echo "You can change the desktop wallpaper randomly by moving the cursor into the bottom right corner"
                 ;;
             *)
                 echo -e "${YELLOW}You can only enter the available option(s)${RESET}"
@@ -119,7 +119,7 @@ print_the_help_message () {
     echo
     echo -e "${BLUE}Available commands:${RESET}"
     echo "  update        Update wallpapers folder location"
-    echo "  hotcorners    Change the desktop wallpaper randomly when moving the pointer into a corner of the screen"
+    echo "  hotcorners    Change the desktop wallpaper randomly when moving the cursor into a corner of the screen"
     echo "  help          Print this help message"
     echo -e "  ${RED}bye           Remove the randow script${RESET}"
 }
@@ -154,7 +154,7 @@ else
             set_a_random_wallpaper
             ;;
         hotcorners)
-            run_the_randow_script_when_moving_the_pointer_into_a_corner_of_the_screen
+            run_the_randow_script_when_moving_the_cursor_into_a_corner_of_the_screen
             ;;
         help)
             print_the_help_message

@@ -24,7 +24,7 @@ Randomly change the desktop wallpaper
 randow
 ```
 
-Change the desktop wallpaper randomly when moving the pointer into a corner of the screen
+Change the desktop wallpaper randomly when moving the cursor into a corner of the screen
 
 ```
 randow hotcorners
