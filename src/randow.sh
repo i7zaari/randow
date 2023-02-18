@@ -37,7 +37,9 @@ get_wallpapers_folder_location () {
 
 set_a_random_wallpaper () {
     WALLPAPER_S=$(cat $WALLPAPERS)
-    gsettings set org.gnome.desktop.background picture-options "zoom"
+    if [[ ! $(gsettings get org.gnome.desktop.background picture-options) =~ "zoom" ]] ; then
+        gsettings set org.gnome.desktop.background picture-options "zoom"
+    fi
     if [[ ! $(ls "$WALLPAPER_S"/*.jp*g | wc -l) -eq 1 ]] ; then
         while [[ $(gsettings get org.gnome.desktop.background picture-uri) =~ $RANDOM_WALLPAPER ]] ; do
             RANDOM_WALLPAPER=$(ls "$WALLPAPER_S"/*.jp*g | shuf -n 1)
